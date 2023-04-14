@@ -56,6 +56,13 @@
                                     </li>
                                     <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
                                         <div class="d-flex flex-row justify-content-end mb-1">
+                                            <a class="text-danger" data-mdb-toggle="tooltip" title="Copy">
+                                                <i id="<%= data[i] %>" class="fas fa-copy" onclick="copy(this)"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                                        <div class="d-flex flex-row justify-content-end mb-1">
                                             <a class="text-danger" data-mdb-toggle="tooltip" title="Delete notes">
                                                 <i id="<%= i %>" class="fas fa-trash-alt" onclick="del(this)"></i>
                                             </a>
@@ -85,6 +92,12 @@
         })
         window.location.reload();
     }
+
+    async function copy(i) {
+        console.log(i.id);
+        navigator.clipboard.writeText(i.id);
+    }
+
 </script>
 
 </html>
