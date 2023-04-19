@@ -3,7 +3,7 @@ const app = express();
 const fs = require('fs');
 var bodyParser = require('body-parser')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
-const port = 3000;
+const port = 443;
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 app.use(express.json());
